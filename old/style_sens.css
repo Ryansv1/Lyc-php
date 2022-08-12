@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.7s;
+  }
+  
+  a:hover {
+    opacity: 0.7;
+  }
+  
+  .navbar-brand {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    color: #1C1C1C;
+    -webkit-text-stroke: 0.1vw #1C1C1C;
+  }
+  
+  .navbar {
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    background: #1C1C1C;
+    text-transform: uppercase;
+  }
+  
+  .navbar-nav{
+    display: block;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .navbar-brand::before {
+    content: attr(data-text);
+    position: absolute;
+    color: #00D661;
+    -webkit-text-stroke: 0vw #00D661;
+    overflow: hidden;
+    animation: animate 5s linear infinite;
+  }
+
+  @keyframes animate 
+  {
+    0%,10%,100%
+    {
+        width: 0;
+    }
+    70%
+    {
+        width: 30%;
+    }
+  }
+
+  main {
+    background: rgb(192,247,199);
+    background: linear-gradient(175deg, rgba(192,247,199,1) 5%, rgba(52,177,71,0.8099614845938375) 43%, rgba(0,255,102,1) 86%);
+    background-size: cover;
+    height: 100vh;
+  }
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 55px;
+}
+
+.table td,.table th{
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.table th{
+    background-color: #23232e;
+    color: #fff;
+}
+
+.table tbody tr:nth-child(even){
+    background-color: gray;
+}
+
+@media(max-width: 500px) {
+    .table thead{
+        display: none;
+    }
+
+    .table, .table tbody,  .table tr, .table td{
+        display: block;
+        width: 100%;
+    }
+
+    .table tr {
+        margin-bottom: 15px;
+    }
+
+    .table td {
+        text-align: right;
+        padding-left: 50%;
+        text-align: right;
+        position: relative;
+    }
+
+    .table td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%; 
+        padding-left: 15px;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
+}
